@@ -1,0 +1,91 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZZ1_PURCHASINGREQ2_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZZ1_PURCHASINGREQ2Type" sap:label="No label defined for CDS view ZZ1_PURCHASI_1" sap:semantics="aggregate"
+				sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true"
+					sap:updatable="false" sap:sortable="false"/><Property Name="PurchasingDocumentItemCateg" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Item category"/><Property Name="FixedSupplier" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Fixed vendor"/><Property Name="PurchaseRequisitionItem" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Requisn. item"/><Property Name="PurchaseRequisitionItemText" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Short Text"/><Property Name="PurchasingGroup" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Purchasing Group"/><Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Material Group"/><Property Name="PurReqnItemCurrency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Currency" sap:value-list="standard" sap:semantics="currency-code"/><Property Name="PurchaseRequisition" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Purchase requisition"/><Property Name="CreationDate" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CreationDate_T" sap:updatable="false" sap:label="Requisition date" sap:semantics="yearmonthday"/><Property Name="CreationDate_T" Type="Edm.String" MaxLength="10" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Requisition date (Description)"/><Property Name="DeliveryDate" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="DeliveryDate_T" sap:updatable="false" sap:label="Delivery date" sap:semantics="yearmonthday"/><Property Name="DeliveryDate_T" Type="Edm.String" MaxLength="10" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Delivery date (Description)"/><Property Name="PurchaseContract" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Outline agreement"/><Property Name="AccountAssignmentCategory" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Acct Assignment Cat."/><Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Unit of Measure" sap:value-list="standard" sap:semantics="unit-of-measure"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Material"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Plant"/><Property Name="ItemNetAmount" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="ItemNetAmount_F" sap:unit="ItemNetAmount_E" sap:updatable="false" sap:label="Tot. val. rel."/><Property Name="ItemNetAmount_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Tot. val. rel. (Formatted)"/><Property Name="ItemNetAmount_E" Type="Edm.String" MaxLength="5" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Tot. val. rel. (Currency)" sap:semantics="currency-code"/><Property Name="RequestedQuantity" Type="Edm.Decimal" Precision="42" Scale="3" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="RequestedQuantity_F" sap:unit="RequestedQuantity_E" sap:updatable="false" sap:label="Quantity requested"/><Property Name="RequestedQuantity_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Quantity requested (Formatted)"/><Property Name="RequestedQuantity_E" Type="Edm.String" MaxLength="3" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Quantity requested (Unit)" sap:semantics="unit-of-measure"/><Property Name="NoOfPOs" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NoOfPOs_F" sap:updatable="false" sap:label="No. of Purchase Req."/><Property Name="NoOfPOs_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="No. of Purchase Req. (Formatted)"/><Property Name="TotalNoofPurchaseReq" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="TotalNoofPurchaseReq_F" sap:updatable="false" sap:label="Total No. of Purchase Req"/><Property Name="TotalNoofPurchaseReq_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Total No. of Purchase Req (Formatted)"/><Property Name="TotalNoofPurchaseReqwcontract" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure"
+					sap:creatable="false" sap:filterable="false" sap:text="TotalNoofPurchaseReqwcontract_F" sap:updatable="false"
+					sap:label="Total No. of Purchase Req. w/contract"/><Property Name="TotalNoofPurchaseReqwcontract_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Total No. of Purchase Req. w/contract (Formatted)"/><Property Name="ofContractPurchaseReq" Type="Edm.Decimal" Precision="42" Scale="7" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="ofContractPurchaseReq_F" sap:updatable="false" sap:label="% of Contract Purchase Req."/><Property Name="ofContractPurchaseReq_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="% of Contract Purchase Req. (Formatted)"/><Property Name="TotalNoofPurchaseReqwocontract" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure"
+					sap:creatable="false" sap:filterable="false" sap:text="TotalNoofPurchaseReqwocontract_F" sap:updatable="false"
+					sap:label="Total No. of Purchase Req. w/o contract"/><Property Name="TotalNoofPurchaseReqwocontract_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="Total No. of Purchase Req. w/o contract (Formatted)"/><Property Name="NoofPurhcaseReqwocontract" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NoofPurhcaseReqwocontract_F" sap:updatable="false" sap:label="No. of Purhcase Req. w/o contract"/><Property Name="NoofPurhcaseReqwocontract_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="No. of Purhcase Req. w/o contract (Formatted)"/><Property Name="NoofContractPurchaseReq" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="NoofContractPurchaseReq_F" sap:updatable="false" sap:label="No. of Contract Purchase Req"/><Property Name="NoofContractPurchaseReq_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="No. of Contract Purchase Req (Formatted)"/></EntityType>
+			<EntityType Name="PurReqnItemCurrency" sap:label="Currency (Master Data)" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="PurReqnItemCurrency_ID"/></Key><Property Name="PurReqnItemCurrency_ID" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="PurReqnItemCurrencyText"
+					sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="PurReqnItemCurrencyText" Type="Edm.String" sap:label="Currency (Description)" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="BaseUnit" sap:label="Unit of Measure (Master Data)" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="BaseUnit_ID"/></Key><Property Name="BaseUnit_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="BaseUnitText" sap:label="Unit of Measure"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="BaseUnitText" Type="Edm.String" sap:label="Unit of Measure (Description)" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+				<Key><PropertyRef Name="ODataQueryMetadata"/></Key><Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZZ1_PURCHASINGREQ2_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZZ1_PURCHASINGREQ2" EntityType="ZZ1_PURCHASINGREQ2_CDS.ZZ1_PURCHASINGREQ2Type" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="PurReqnItemCurrency" EntityType="ZZ1_PURCHASINGREQ2_CDS.PurReqnItemCurrency" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="BaseUnit" EntityType="ZZ1_PURCHASINGREQ2_CDS.BaseUnit" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="AdditionalMetadata" EntityType="ZZ1_PURCHASINGREQ2_CDS.ODataQueryAdditionalMetadata" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/></EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_PURCHASINGREQ2_CDS.ZZ1_PURCHASINGREQ2Type/PurReqnItemCurrency">
+				<Annotation Term="Common.ValueList" Qualifier="MasterData">
+					<Record><PropertyValue Property="Label" String="Currency ( Master Data )"/><PropertyValue Property="CollectionPath" String="PurReqnItemCurrency"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="PurReqnItemCurrency"/><PropertyValue Property="ValueListProperty" String="PurReqnItemCurrency_ID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_PURCHASINGREQ2_CDS.ZZ1_PURCHASINGREQ2Type/BaseUnit">
+				<Annotation Term="Common.ValueList" Qualifier="MasterData">
+					<Record><PropertyValue Property="Label" String="Unit of Measure ( Master Data )"/><PropertyValue Property="CollectionPath" String="BaseUnit"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="BaseUnit"/><PropertyValue Property="ValueListProperty" String="BaseUnit_ID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZZ1_PURCHASINGREQ2_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZZ1_PURCHASINGREQ2_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+{
+	"_version": "1.7.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "ZSCM_KPIs_test.ZSCM_KPI_Test",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"dataSources": {
+			"ZZ1_PURCHASINGREQ2_CDS": {
+				"uri": "/sap/opu/odata/sap/ZZ1_PURCHASINGREQ2_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZZ1_PURCHASINGREQ2_CDS/metadata.xml",
+					"annotations": [
+						"ZZ1_PURCHASINGREQ_CARD1"
+					]
+				}
+			},
+			"ZZ1_PURCHASINGREQ_CARD1": {
+				"type": "ODataAnnotation",
+				"uri": "ZZ1_PURCHASINGREQ_CARD1.xml",
+				"settings": {
+					"localUri": "ZZ1_PURCHASINGREQ_CARD1.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "OVP.cardtemplate",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ovp": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"preload": true,
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"ZZ1_PURCHASINGREQ2_CDS": {
+				"dataSource": "ZZ1_PURCHASINGREQ2_CDS",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"extends": {
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "ZZ1_PURCHASINGREQ2_CDS",
+		"globalFilterEntityType": "ZZ1_PURCHASINGREQ2Type",
+		"containerLayout": "resizable",
+		"enableLiveFilter": true,
+		"considerAnalyticalParameters": false,
+		"cards": {
+			"card00": {
+				"model": "ZZ1_PURCHASINGREQ2_CDS",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card00_title}}",
+					"entitySet": "ZZ1_PURCHASINGREQ2",
+					"ChartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart"
+				}
+			}
+		}
+	}
+}
